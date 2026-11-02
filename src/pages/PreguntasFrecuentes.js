@@ -15,26 +15,26 @@ const preguntas = [
       "Debes generar una orden de compra al proveedor correspondiente lo antes posible para reponer las unidades.",
   },
   {
-    pregunta: "¿Puedo buscar un producto por categoría?",
+    pregunta: "¿Cómo agrego un artículo nuevo al inventario?",
     respuesta:
-      "Sí, el buscador de la página de inicio filtra tanto por nombre del producto como por categoría.",
+      "Entra a 'Agregar artículo' en el menú superior, completa nombre, marca y tipo, y guarda. El artículo aparecerá en la lista de 'Artículos'.",
   },
 ];
 
 function PreguntasFrecuentes() {
-    return (
-        <section>
-            <h2>Preguntas Frecuentes</h2>
-            <div clasName="faq">
-                {preguntas.map((item) => (
-                    <details key={item.pregunta}>
-                        <summary>{item.pregunta}</summary>
-                        <p>{item.respuesta}</p>
-                    </details>
-                ))}
-            </div>
-        </section>
-    );
+  return (
+    <section>
+      <h2 className="mb-4 text-2xl font-bold">Preguntas frecuentes</h2>
+      <div>
+        {preguntas.map((item) => (
+          <details key={item.pregunta} className="mb-3 rounded-md bg-white px-4 py-3 shadow">
+            <summary className="cursor-pointer font-semibold">{item.pregunta}</summary>
+            <p className="mt-2">{item.respuesta}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default PreguntasFrecuentes;
